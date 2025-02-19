@@ -1,0 +1,27 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+    <Dialog id="idDialog"
+            title="{i18n>OpenDialogo}">
+        <content>
+            
+        
+        </content>
+
+        <beginButton>
+            <Button text="{i18n>botonini}"
+                    type="Emphasized"
+                    press="OnAceptar"
+                    width="4rem"/>
+
+        </beginButton>
+
+        <endButton>
+            <Button text="{i18n>botonfin}"
+                    type="Reject"
+                    press="onCerrar"
+                    width="4rem"/>
+        
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

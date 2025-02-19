@@ -1,0 +1,49 @@
+<mvc:View
+    controllerName="cursologaligrup.invoicessantos.controller.listado"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+
+    <List id="idList"
+          headerText="{i18n>CabeceraLista}"
+          class="sapUiResponsiveMargin"
+          items="{invoicessantos>/InvoicesSantos}"
+          width="auto">
+
+        <items>
+            <ObjectListItem title="{invoicessantos>Producto}" 
+                            number="{
+                                    parts: [
+                                        'invoicessantos>Precio',
+                                        'monedas>/moneda'
+                                        ],
+                                    type: 'sap.ui.model.type.Currency',
+                                    formatOptions : {
+                                        showMeasure : false,
+                                        style: 'short',
+                                        roundingMode: 'TOWARDS_ZERO',
+                                        decimals: 2
+                                        }
+                                    }"
+                            numberUnit="{monedas>/moneda}"
+                            numberState="{= 
+                                            (${invoicessantos>Precio} >= 30.00 &amp;&amp; ${invoicessantos>Precio} &lt;= 39.00)? 'Error' :
+                                            (${invoicessantos>Precio} >= 40.00 &amp;&amp; ${invoicessantos>Precio} &lt;= 69.99)? 'Warning' :
+                                            (${invoicessantos>Precio} >= 70.00 &amp;&amp; ${invoicessantos>Precio} &lt;= 99.99)? 'Success' : 'Information'
+                                        }">
+                            <firstStatus>
+                                <ObjectStatus
+                                            core:require= "{
+                                                formateo: 'cursologaligrup/invoicessantos/model/formateador'
+                                            }"
+                                            text="{
+                                                path: 'invoicessantos>Estado',
+                                                formatter: 'formateo.statusText.bind($controller)'
+                                            }"/>
+
+                            </firstStatus>
+
+            </ObjectListItem>
+        </items>
+    </List>
+</mvc:View>

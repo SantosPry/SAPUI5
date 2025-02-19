@@ -1,12 +1,25 @@
 <c:FragmentDefinition
 	xmlns="sap.m"
-	xmlns:c="sap.ui.core">
-    <Panel
-        headerText="{i18n>panelfragtitulo"
-        class= "sapsapUiResponsiveMargin"
-        width="30%">
+    xmlns:form="sap.ui.layout.form"
+	xmlns:c="sap.ui.core"
+>
+
+    <Panel headerText="{i18n>panelfragtitulo}"
+           class="sapUiResponsiveMargin"
+           width="30%" >
         <content>
-        
+            <form:SimpleForm>
+                <form:content>
+                   <Label text="{i18n>formSimpleLabel1}"/>
+                   <Input />
+                   <Label text="{i18n>formSimpleLabel2}"/>
+                   <DatePicker/>
+                           
+
+                </form:content>
+            </form:SimpleForm>
         </content>
+        
     </Panel>
+
 </c:FragmentDefinition>

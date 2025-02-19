@@ -8,9 +8,14 @@
             <pages>
                 <Page title="{i18n>Page}">
                     <mvc:XMLView 
+                        id="idHolaPanel"
                         viewName="cursologaligrup.invoicessantos.view.HolaPanel"
                         type="XML"/>
-                           
+
+                    <mvc:XMLView 
+                        id="idListado"
+                        viewName="cursologaligrup.invoicessantos.view.listado"
+                        type="XML"/>                           
                 </Page>
            </pages>          
         </App>

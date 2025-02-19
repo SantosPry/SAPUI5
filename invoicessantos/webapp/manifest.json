@@ -51,7 +51,12 @@
                 "settings": {
                     "bundleName": "cursologaligrup.invoicessantos.i18n.i18n"
                 }
+            },
+            "invoicessantos" : {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/invoicessantos.json"
             }
+
         },
         "resources": {
             "css": [

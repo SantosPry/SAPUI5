@@ -1,0 +1,35 @@
+{
+
+    "InvoicesSantos" : [
+        {
+            "Producto" : "Televisión",
+            "Cantidad" : 21,
+            "Precio"   : 800.00,
+            "Estado"   : "A"
+        },
+        {
+            "Producto" : "Móviles",
+            "Cantidad" : 40,
+            "Precio"   : 80.35,
+            "Estado"   : "B"
+        },
+        {
+            "Producto" : "Tablets",
+            "Cantidad" : 21,
+            "Precio"   : 250.00,
+            "Estado"   : "C"
+        },
+        {
+            "Producto" : "Ordenadores",
+            "Cantidad" : 212,
+            "Precio"   : 33.50,
+            "Estado"   : "A"
+        },
+        {
+            "Producto" : "Impresoras",
+            "Cantidad" : 22,
+            "Precio"   : 45.00,
+            "Estado"   : "A"
+        }
+    ]
+}

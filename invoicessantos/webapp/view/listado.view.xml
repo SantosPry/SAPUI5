@@ -7,9 +7,41 @@
     <List id="idList"
           headerText="{i18n>CabeceraLista}"
           class="sapUiResponsiveMargin"
-          items="{invoicessantos>/InvoicesSantos}"
+          items="{
+                path: 'invoicessantos>/InvoicesSantos',
+                filters: {
+                    path:'Precio',
+                    operator: 'BT',
+                    value1: '1.00',
+                    value2: '1650.00'
+                },
+                sorter: {
+                    path: 'Marca',
+                    group: true
+                }
+            }"
           width="auto">
-
+        <headerToolbar>
+            <Toolbar>
+                    <Title text="{i18n>CabeceraLista}"/>
+                    <ToolbarSpacer />
+                        
+                    <SearchField search="onFilter"
+                                 width="50%"/>
+                    <Select
+                        autoAdjustWidth="false"
+                        columnRatio="3:2"
+                            id="idSelect"
+                            change="onFilter"
+                            forceSelection="false">
+                        <core:Item key="A" text="En Proceso"/>
+                        <core:Item key="B" text="Obsoleto"/>
+                        <core:Item key="C" text="Cargado"/>
+                        <core:Item key="D" text="Otros"/>
+                    </Select>
+            </Toolbar>
+            
+        </headerToolbar>
         <items>
             <ObjectListItem title="{invoicessantos>Producto}" 
                             number="{

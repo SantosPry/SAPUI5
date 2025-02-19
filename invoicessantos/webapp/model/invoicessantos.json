@@ -5,30 +5,35 @@
             "Producto" : "Televisión",
             "Cantidad" : 21,
             "Precio"   : 800.00,
+            "Marca"    : "LG",
             "Estado"   : "A"
         },
         {
             "Producto" : "Móviles",
             "Cantidad" : 40,
             "Precio"   : 80.35,
+            "Marca"    : "APPLE",
             "Estado"   : "B"
         },
         {
             "Producto" : "Tablets",
             "Cantidad" : 21,
             "Precio"   : 250.00,
+            "Marca"    : "LG",
             "Estado"   : "C"
         },
         {
             "Producto" : "Ordenadores",
             "Cantidad" : 212,
             "Precio"   : 33.50,
+            "Marca"    : "HP",
             "Estado"   : "A"
         },
         {
             "Producto" : "Impresoras",
             "Cantidad" : 22,
             "Precio"   : 45.00,
+            "Marca"    : "EPSON",
             "Estado"   : "A"
         }
     ]

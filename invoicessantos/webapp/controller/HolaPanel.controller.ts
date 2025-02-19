@@ -4,6 +4,8 @@ import Dialog from "sap/m/Dialog";
 import MessageToast from "sap/m/MessageToast";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 
+
+
 /**
  * @namespace cursologaligrup.invoicessantos.controller
  */
@@ -36,5 +38,7 @@ export default class HolaPanel extends Controller {
        this.dialog.close();
        
    }
+
+
 
 }

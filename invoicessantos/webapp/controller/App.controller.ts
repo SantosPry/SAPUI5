@@ -13,12 +13,7 @@ export default class App extends Controller {
         this.viewModel();
     }
 
-    public onBotnButtonPress(): void {
-        let oResourceModel = this.getOwnerComponent()?.getModel("i18n") as ResourceModel;
-        let sText = oResourceModel?.getProperty("Mensaje")
-       MessageToast.show(sText || "No encontrado")
 
-    }
 
     private viewModel () : void {
         let oData = {

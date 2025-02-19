@@ -7,11 +7,10 @@
         <App id="idApp">  
             <pages>
                 <Page title="{i18n>Page}">
-                    <Panel headerText="{i18n>Panel}" >
-                        <Button text="{i18n>Bt1}" 
-                                press="onBotnButtonPress"/>
-                        <Input value="{view>/contactos/0/name}"/>
-                    </Panel>
+                    <mvc:XMLView 
+                        viewName="cursologaligrup.invoicessantos.view.HolaPanel"
+                        type="XML"/>
+                           
                 </Page>
            </pages>          
         </App>

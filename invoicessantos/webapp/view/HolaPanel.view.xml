@@ -1,0 +1,25 @@
+<mvc:View
+	controllerName="cursologaligrup.invoicessantos.controller.HolaPanel"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+        xmlns:corePanel="sap.ui.core">
+    <Panel headerText="{i18n>Panel}"
+            class="sapUiResponsiveMargin"
+            width="auto" >
+        <Button text="{i18n>Bt1}" 
+                press="onBotnButtonPress"
+                class="sapUiSmallMarginEnd" />
+        <Input value="{view>/contactos/0/name}"
+                description="Hola {view>/recipient/name}"
+                width="60%"
+                valueLiveUpdate="true" />
+        <Text text="Hola {view>/recipient/name}"
+                class="boldElements" />
+
+    </Panel>
+
+
+
+
+
+</mvc:View>

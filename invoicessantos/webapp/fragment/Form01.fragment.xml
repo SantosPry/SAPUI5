@@ -1,0 +1,12 @@
+<c:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:c="sap.ui.core">
+    <Panel
+        headerText="{i18n>panelfragtitulo"
+        class= "sapsapUiResponsiveMargin"
+        width="30%">
+        <content>
+        
+        </content>
+    </Panel>
+</c:FragmentDefinition>

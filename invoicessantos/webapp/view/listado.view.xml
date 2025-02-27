@@ -91,6 +91,13 @@
                     <ObjectAttribute title="Cantidad" text="{serviceOdata>Quantity}" />
                     <ObjectAttribute title="Descuento" text="{serviceOdata>Discount}" />
                     <ObjectAttribute title="Transporte" text="{serviceOdata>ShipperName}" />
+<!--                     <ObjectAttribute>
+                        <HBox>
+                            <Text text="{serviceOdata>CustomerName}" />
+                            <Text text=" | " />
+                            <Text text="{serviceOdata>City}" />
+                        </HBox>
+                    </ObjectAttribute>  -->                   
                 </attributes>
 
                 <firstStatus>

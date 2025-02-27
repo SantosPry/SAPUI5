@@ -8,6 +8,10 @@ import FilterSelect from "sap/m/semantic/FilterSelect";
 import List from "sap/m/List";
 import ListBinding from "sap/ui/model/ListBinding";
 import Select from "sap/m/Select";
+import Component from "../Component";
+import Event from "sap/ui/base/Event";
+import ObjectListItem from "sap/m/ObjectListItem";
+import Context from "sap/ui/model/odata/v2/Context";
 
 /***
  * @namespace cursologaligrup.invoicessantos.controller
@@ -55,6 +59,19 @@ export default class listado extends Controller {
         const list = this.byId("idList") as List;
         const binding = list.getBinding("items") as ListBinding;
         binding.filter(filtros);
+
+   }
+   public onVisualizarDetalle(event: Event) : void {
+        const item = event.getSource() as ObjectListItem;
+        const bindingContext = item.getBindingContext("serviceOdata") as Context;
+        const path = bindingContext.getPath();
+        console.log(path);
+
+        const router = (this.getOwnerComponent() as Component).getRouter();
+        router.navTo("RouteDetalle", {
+            path: window.encodeURIComponent(path)
+        }     
+        );
 
    }
 }

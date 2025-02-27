@@ -40,5 +40,15 @@ class listado extends Controller_1.default {
         const binding = list.getBinding("items");
         binding.filter(filtros);
     }
+    onVisualizarDetalle(event) {
+        const item = event.getSource();
+        const bindingContext = item.getBindingContext("serviceOdata");
+        const path = bindingContext.getPath();
+        console.log(path);
+        const router = this.getOwnerComponent().getRouter();
+        router.navTo("RouteDetalle", {
+            path: window.encodeURIComponent(path)
+        });
+    }
 }
 exports.default = listado;

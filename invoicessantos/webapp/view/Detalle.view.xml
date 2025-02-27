@@ -1,0 +1,11 @@
+<mvc:View
+	controllerName="cursologaligrup.invoicessantos.controller.Detalle"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+
+	<Page>
+		<ObjectHeader  title="Prueba de cabecera"  />
+	</Page>
+    
+    
+</mvc:View>

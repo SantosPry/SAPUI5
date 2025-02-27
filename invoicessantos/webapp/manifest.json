@@ -14,6 +14,17 @@
             "id": "@sap/generator-fiori:basic",
             "version": "1.16.3",
             "toolsId": "3d6c87ed-123a-430c-9722-545fb8ef4fe0"
+        },
+        "dataSources": {
+            "servicioOdatads" : {
+                "type": "OData",
+                "uri": "/v2/northwind/northwind.svc/",
+                "settings": {
+                    "odataVersion": "2.0"
+
+                }
+
+            }
         }
     },
     "sap.ui": {
@@ -55,6 +66,12 @@
             "invoicessantos" : {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/invoicessantos.json"
+            },
+
+            "serviceOdata" : {
+                "dataSource": "servicioOdatads",
+                "preload": true               
+
             }
 
         },
@@ -79,18 +96,27 @@
             },
             "routes": [
                 {
-                    "name": "RouteView1",
+                    "name": "RouteApp",
                     "pattern": ":?query:",
                     "target": [
-                        "TargetView1"
+                        "TargetApp"
                     ]
-                }
+                },
+                {
+                    "name": "RouteDetalle",
+                    "pattern": "Detalle",
+                    "target":  "TargetDetalle"
+                  
+                }                
             ],
             "targets": {
-                "TargetView1": {
-                    "id": "View1",
-                    "name": "View1"
-                }
+                "TargetApp" : {
+                   "viewName": "App"
+                },
+                "TargetDetalle" : {
+                    "viewName" :"Detalle"
+
+                }                
             }
         },
         "rootView": {

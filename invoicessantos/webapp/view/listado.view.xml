@@ -7,18 +7,21 @@
     <List id="idList"
           headerText="{i18n>CabeceraLista}"
           class="sapUiResponsiveMargin"
+          growing="true"
+          growingThreshold="50"
+          growingScrollToLoad="true"
           items="{
-                path: 'invoicessantos>/InvoicesSantos',
+                path: 'serviceOdata>/Invoices',
                 filters: {
-                    path:'Precio',
+                    path:'ExtendedPrice',
                     operator: 'BT',
-                    value1: '1.00',
-                    value2: '1650.00'
+                    value1: '0.00',
+                    value2: '1000000.00'
                 },
                 sorter: {
-                    path: 'Marca',
+                    path: 'ShipperName',
                     group: true
-                }
+                }                
             }"
           width="auto">
         <headerToolbar>
@@ -43,10 +46,12 @@
             
         </headerToolbar>
         <items>
-            <ObjectListItem title="{invoicessantos>Producto}" 
+            <ObjectListItem 
+                            type="Navigation"
+                            title="{serviceOdata>ProductName}" 
                             number="{
                                     parts: [
-                                        'invoicessantos>Precio',
+                                        'serviceOdata>ExtendedPrice',
                                         'monedas>/moneda'
                                         ],
                                     type: 'sap.ui.model.type.Currency',
@@ -59,11 +64,13 @@
                                     }"
                             numberUnit="{monedas>/moneda}"
                             numberState="{= 
-                                            (${invoicessantos>Precio} >= 30.00 &amp;&amp; ${invoicessantos>Precio} &lt;= 39.00)? 'Error' :
-                                            (${invoicessantos>Precio} >= 40.00 &amp;&amp; ${invoicessantos>Precio} &lt;= 69.99)? 'Warning' :
-                                            (${invoicessantos>Precio} >= 70.00 &amp;&amp; ${invoicessantos>Precio} &lt;= 99.99)? 'Success' : 'Information'
-                                        }">
-                            <firstStatus>
+                                            (${serviceOdata>ExtendedPrice} >= 30.00 &amp;&amp; ${serviceOdata>ExtendedPrice} &lt;= 39.00)? 'Error' :
+                                            (${serviceOdata>ExtendedPrice} >= 40.00 &amp;&amp; ${serviceOdata>ExtendedPrice} &lt;= 69.99)? 'Warning' :
+                                            (${serviceOdata>ExtendedPrice} >= 70.00 &amp;&amp; ${serviceOdata>ExtendedPrice} &lt;= 99.99)? 'Success' : 'Information'
+                                        }"
+                            press="onVisualizarDetalle">
+
+<!--                             <firstStatus>
                                 <ObjectStatus
                                             core:require= "{
                                                 formateo: 'cursologaligrup/invoicessantos/model/formateador'
@@ -73,7 +80,7 @@
                                                 formatter: 'formateo.statusText.bind($controller)'
                                             }"/>
 
-                            </firstStatus>
+                            </firstStatus> -->
 
             </ObjectListItem>
         </items>

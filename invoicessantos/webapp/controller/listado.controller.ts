@@ -34,15 +34,17 @@ export default class listado extends Controller {
         this.getView()?.setModel(oModel, "monedas");
     };
     public onFilter(event : SearchField$SearchEvent) : void {
-        const valor = event.getParameter("query");
         const select = this.byId("idSelect") as Select;
         const key = select.getSelectedKey();
         const filtros = [] ;
-
+        console.log(key);
+        
         if (key) {
             filtros.push(new Filter("Estado", FilterOperator.EQ, key));
 
         }
+
+        const valor = event.getParameter("query");
 
         if (valor) {
            // filtros.push(new Filter("Producto", FilterOperator.Contains, valor));
@@ -65,7 +67,10 @@ export default class listado extends Controller {
         const item = event.getSource() as ObjectListItem;
         const bindingContext = item.getBindingContext("serviceOdata") as Context;
         const path = bindingContext.getPath();
+        console.log(item);
+        console.log(bindingContext);
         console.log(path);
+
 
         const router = (this.getOwnerComponent() as Component).getRouter();
         router.navTo("RouteDetalle", {

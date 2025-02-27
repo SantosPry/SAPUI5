@@ -104,7 +104,7 @@
                 },
                 {
                     "name": "RouteDetalle",
-                    "pattern": "Detalle",
+                    "pattern": "Detalle/{path}",
                     "target":  "TargetDetalle"
                   
                 }                

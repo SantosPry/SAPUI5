@@ -34,13 +34,16 @@
                     <Select
                         autoAdjustWidth="false"
                         columnRatio="3:2"
-                            id="idSelect"
-                            change="onFilter"
-                            forceSelection="false">
+                        id="idSelect"
+                        change="onFilter"
+                        forceSelection="false">
+
+                        <core:Item key="" text=" "/>
                         <core:Item key="A" text="En Proceso"/>
                         <core:Item key="B" text="Obsoleto"/>
                         <core:Item key="C" text="Cargado"/>
                         <core:Item key="D" text="Otros"/>
+
                     </Select>
             </Toolbar>
             

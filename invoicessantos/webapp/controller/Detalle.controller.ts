@@ -11,16 +11,16 @@ import { Route$PatternMatchedEvent } from "sap/ui/core/routing/Route";
 export default class Detalle extends Controller {
     public onInit() : void | undefined {
         const router =(this.getOwnerComponent() as Component).getRouter();
-        router.getRoute("RouteDetalle")?.attachPatternMatched(this.onObtenerDeta, this);
+        router.getRoute("RouteDetalle")?.attachPatternMatched(this.onObtenerDato, this);
     }
 
-    private onObtenerDeta (event : Route$PatternMatchedEvent ) : void {
+    private onObtenerDato (event : Route$PatternMatchedEvent ) : void {
         const  argumentos =  event.getParameter("arguments") as any;
         const path = argumentos.path;
         const view = this.getView();
 
         view?.bindElement({
-            path : window.decodeURI(path),
+            path : window.decodeURIComponent(path),
             model: "serviceOdata"
         });  
     }

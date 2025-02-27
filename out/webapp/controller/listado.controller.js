@@ -19,13 +19,14 @@ class listado extends Controller_1.default {
     }
     ;
     onFilter(event) {
-        const valor = event.getParameter("query");
         const select = this.byId("idSelect");
         const key = select.getSelectedKey();
         const filtros = [];
+        console.log(key);
         if (key) {
             filtros.push(new Filter_1.default("Estado", FilterOperator_1.default.EQ, key));
         }
+        const valor = event.getParameter("query");
         if (valor) {
             // filtros.push(new Filter("Producto", FilterOperator.Contains, valor));
             filtros.push(new Filter_1.default({
@@ -44,6 +45,8 @@ class listado extends Controller_1.default {
         const item = event.getSource();
         const bindingContext = item.getBindingContext("serviceOdata");
         const path = bindingContext.getPath();
+        console.log(item);
+        console.log(bindingContext);
         console.log(path);
         const router = this.getOwnerComponent().getRouter();
         router.navTo("RouteDetalle", {

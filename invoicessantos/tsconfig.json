@@ -9,7 +9,6 @@
     "moduleResolution": "node",
     "rootDir": "./webapp",
     "outDir": "./dist",
-    "baseUrl": "./",
     "paths": {
       "cursologaligrup/invoicessantos/*": [
         "./webapp/*"
@@ -27,6 +26,8 @@
     ]
   },
   "include": [
-    "./webapp/**/*"
+    "./webapp/**/*.ts"
   ]
+
+
 }

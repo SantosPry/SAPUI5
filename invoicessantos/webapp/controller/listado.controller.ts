@@ -37,7 +37,6 @@ export default class listado extends Controller {
         const select = this.byId("idSelect") as Select;
         const key = select.getSelectedKey();
         const filtros = [] ;
-        console.log(key);
         
         if (key) {
             filtros.push(new Filter("Estado", FilterOperator.EQ, key));
@@ -60,17 +59,12 @@ export default class listado extends Controller {
         }
         const list = this.byId("idList") as List;
         const binding = list.getBinding("items") as ListBinding;
-        binding.filter(filtros);
 
    }
    public onVisualizarDetalle(event: Event) : void {
         const item = event.getSource() as ObjectListItem;
         const bindingContext = item.getBindingContext("serviceOdata") as Context;
         const path = bindingContext.getPath();
-        console.log(item);
-        console.log(bindingContext);
-        console.log(path);
-
 
         const router = (this.getOwnerComponent() as Component).getRouter();
         router.navTo("RouteDetalle", {

@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "@ui5/ts-interface-generator": "^0.9.0"
+  }
+}

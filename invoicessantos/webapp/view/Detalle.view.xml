@@ -2,6 +2,7 @@
 	controllerName="cursologaligrup.invoicessantos.controller.Detalle"
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
+
 	xmlns:rating="cursologaligrup.invoicessantos.control">
 
 	<Page showNavButton="true"
@@ -15,18 +16,13 @@
 				<ObjectAttribute title="Cantidad" text="{serviceOdata>Quantity}" />
 				<ObjectAttribute title="Descuento" text="{serviceOdata>Discount}" />
 				<ObjectAttribute title="Transporte" text="{serviceOdata>ShipperName}" />
-<!--                     <ObjectAttribute>
-					<HBox>
-						<Text text="{serviceOdata>CustomerName}" />
-						<Text text=" | " />
-						<Text text="{serviceOdata>City}" />
-					</HBox>
-				</ObjectAttribute>  -->                   
+           
 			</attributes>
 		</ObjectHeader>
-		<ranting:ProducRating>
-		
-		</ranting:ProducRating>
+		<rating:ProductRating 
+							id="rating"
+							change="onRatingChange"/>
+
 	</Page>
     
     

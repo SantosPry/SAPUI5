@@ -13,9 +13,10 @@ import ResourceBundle from "sap/base/i18n/ResourceBundle";
 
 export default class ProductRating extends Control {
 
-/*     constructor(idOrSettings?: string | $ProductRatingSettings);
+    constructor(idOrSettings?: string | $ProductRatingSettings);
     constructor(id?: string, settings?: $ProductRatingSettings);
-    constructor(id?: string, settings?: $ProductRatingSettings) { super(id, settings); } */
+    constructor(id?: string, settings?: $ProductRatingSettings) { super(id, settings); }    
+
 
     static readonly metadata : MetadataOptions = {
         properties: {
@@ -54,7 +55,7 @@ export default class ProductRating extends Control {
 
         this.setAggregation("_rating", new RatingIndicator({
             iconSize: "2rem",
-//            value: this.getValue(),
+            value: this.getValue(),
             liveChange: this._onRate.bind(this)
         }));
         
@@ -101,7 +102,7 @@ export default class ProductRating extends Control {
         (this.getAggregation("_label") as Label).setText(resourceBundle.getText("productRatingLabelFinal"));
 
         this.fireEvent("change", {
-//            value: this.getValue()
+            value: this.getValue()
         });
     }
 
@@ -119,7 +120,7 @@ export default class ProductRating extends Control {
         (this.getAggregation("_label") as Label).setText(resourceBundle.getText("productRatingLabelInitial"));
         (this.getAggregation("_label") as Label).setDesign("Standard");
 
-//        this.setValue(0);
+        this.setValue(0);
     }
 
 }

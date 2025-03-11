@@ -1,0 +1,55 @@
+<mvc:View 
+    controllerName="master.logaligroup.empleados.controller.Main"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mvc="sap.ui.core.mvc">
+
+    <f:DynamicPage id="dynamicPage" >
+        <f:title>
+            <f:DynamicPageTitle >
+                <f:heading>
+                    <Title text="{i18n>appTitle}" 
+                           wrapping="true"/>   
+                </f:heading>
+
+
+            </f:DynamicPageTitle>
+        </f:title>
+        <f:content>
+            <Table id="table">
+                <headerToolbar >
+                    <Toolbar>
+                        <Title text="{i18n>title}" 
+                               wrapping="true"/>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column >
+                       <Text text="{i18n>ID}"/>
+                    </Column>
+                    <Column >
+                       <Text text="{i18n>fullname}"/>
+                    </Column>
+                    <Column >
+                       <Text text="{i18n>country}"/>
+                    </Column>
+                    <Column >
+                       <Text text="{i18n>city}"/>
+                    </Column>
+                    <Column >
+                       <Text text="{i18n>postalCode}"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+
+        </f:content>    
+    </f:DynamicPage>
+
+</mvc:View>

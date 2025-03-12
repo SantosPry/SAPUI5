@@ -77,7 +77,7 @@ export default class Main extends BaseController {
         const oCombobox = controls[1] as ComboBox;
         oInput.setValue("");
         oCombobox.setSelectedKey("");
-        this.onFilterBarSearch().
+        this.onFilterBarSearch();
 
     }
 }

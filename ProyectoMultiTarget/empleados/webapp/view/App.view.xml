@@ -4,7 +4,10 @@
     xmlns:mvc="sap.ui.core.mvc">
     <Shell id="shell" >
         <App id="app">
-
+            <pages>
+                <mvc:XMLView viewName="master.logaligroup.empleados.view.Container"
+                type="XML"/>
+            </pages>
         </App>    
     </Shell>
 

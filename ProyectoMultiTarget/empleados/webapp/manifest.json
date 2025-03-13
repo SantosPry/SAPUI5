@@ -78,12 +78,14 @@
                     "pattern": ":?query:",
                     "target": [
                         "TargetMain"
+
                     ]
                 },
                 {
                     "name": "RouteDetails",
-                    "pattern": "Employee(ID)",
+                    "pattern": "Employee(ID):?query:",
                     "target": [
+                        "TargetMain",
                         "TargetDetails"
                     ]                    
                 }

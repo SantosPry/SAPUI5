@@ -2,18 +2,19 @@
   	xmlns="sap.m"
     xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc">
-
     f:<f:FlexibleColumnLayout id="container"
                               layout="{view>/layout}">
         <f:beginColumnPages>
             <mvc:XMLView id="master"
-                         viewName="master.logaligroup.empleados.view.Main" 
-                         type="XML"  />
+                            viewName="master.logaligroup.empleados.view.Main" 
+                            type="XML"  />
         </f:beginColumnPages>
         <f:midColumnPages>
             <mvc:XMLView id="details"
-                         viewName="master.logaligroup.empleados.view.Details" 
-                         type="XML"  />
+                            viewName="master.logaligroup.empleados.view.Details" 
+                            type="XML"  />
         </f:midColumnPages>
+
     </f:FlexibleColumnLayout>
+
 </mvc:View>

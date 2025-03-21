@@ -1,8 +1,7 @@
 import Controller from "sap/ui/core/mvc/Controller";
 import Router from "sap/ui/core/routing/Router";
 import UIComponent from "sap/ui/core/UIComponent";
-import Model, { Model$RequestCompletedEvent } from "sap/ui/model/Model";
-import View from "sap/ui/core/mvc/View";
+import Model from "sap/ui/model/Model";
 import ResourceModel from "sap/ui/model/resource/ResourceModel";
 import ResourceBundle from "sap/base/i18n/ResourceBundle";
 import History from "sap/ui/core/routing/History";
@@ -11,13 +10,15 @@ import History from "sap/ui/core/routing/History";
  * @namespace master.logaligroup.empleados.controller
  */
 
-export default class BaseController extends Controller{
+
+export default class BaseController extends Controller {
+
 
     public getRouter () : Router {
         return (this.getOwnerComponent() as UIComponent).getRouter();
     }
- 
-    public getModel (name : string ) : Model {
+
+    public getModel (name : string) : Model {
         return this.getView()?.getModel(name) as Model;
     }
 
@@ -26,7 +27,7 @@ export default class BaseController extends Controller{
     }
 
     public getResourceBundle () : ResourceBundle {
-        return <ResourceBundle> ((this.getOwnerComponent()as UIComponent).getModel("i18n") as ResourceModel ).getResourceBundle();
+        return <ResourceBundle> ((this.getOwnerComponent() as UIComponent).getModel("i18n") as ResourceModel).getResourceBundle();
     }
 
     public onNavToBack() : void {
@@ -34,8 +35,8 @@ export default class BaseController extends Controller{
 
         if (sPreviousHash !== undefined) {
             window.history.go(-1);
-        }else { this.getRouter().navTo("RouteMain");
-
+        } else {
+            this.getRouter().navTo("RouteMain");
         }
     }
 }

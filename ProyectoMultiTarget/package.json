@@ -9,6 +9,7 @@
     "undeploy": "cf undeploy ProyectoMultiTarget --delete-services --delete-service-keys --delete-service-brokers"
   },
   "devDependencies": {
+    "@ui5/cli": "^4.0.14",
     "mbt": "^1.2.29",
     "rimraf": "^5.0.5"
   }

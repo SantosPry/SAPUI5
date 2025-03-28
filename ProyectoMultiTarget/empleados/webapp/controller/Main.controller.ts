@@ -21,7 +21,7 @@ export default class Main extends BaseController {
     /*eslint-disable @typescript-eslint/no-empty-function*/
     public onInit(): void {
         this.loadCountries();
-        this.loadEmployees();
+//        this.loadEmployees();
     }
 
     private loadCountries () : void {
@@ -76,13 +76,9 @@ export default class Main extends BaseController {
     }
 
     public onNavToDetails (event : Event) : void {
-        console.log("Entra en Metodo oNavToDeails");
         const item = event.getSource() as ObjectListItem;
-        console.log("Entra en Metodo oNavToDeails");
         const bindingContext = item.getBindingContext("northwind") as Context;
-        console.log(item);
         const id = bindingContext.getProperty("EmployeeID");
-
         const router = this.getRouter();
         const viewModel = this.getModel("view") as JSONModel;
 

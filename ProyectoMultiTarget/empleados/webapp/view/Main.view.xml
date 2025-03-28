@@ -13,8 +13,6 @@
                     <Title text="{i18n>appTitle}" 
                            wrapping="true"/>   
                 </f:heading>
-
-
             </f:DynamicPageTitle>
         </f:title>
         <f:header>

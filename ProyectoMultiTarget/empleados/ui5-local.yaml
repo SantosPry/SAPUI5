@@ -37,6 +37,25 @@ server:
       afterMiddleware: compression
       configuration:
         ignoreCertError: false # If set to true, certificate errors will be ignored. E.g. self-signed certificates will be accepted
+        backend:
+          - url: http://erp13.sap4practice.com:9037
+            client: '001'
+            authenticationType: BasicAuthentication
+            path: /sap
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /v2/northwind/northwind.svc
+            metadataPath: ./webapp/localService/myNorthwind/metadata.xml
+            mockdataPath: ./webapp/localService/myNorthwind/data
+            generateMockData: true
+          - urlPath: /sap/opu/odata/sap/YSAPUI5_SRV_01
+            metadataPath: ./webapp/localService/YSAPUI5_SRV_01/metadata.xml
+            mockdataPath: ./webapp/localService/YSAPUI5_SRV_01/data
+            generateMockData: true
+        annotations: []
 builder:
   customTasks:
     - name: ui5-tooling-transpile-task

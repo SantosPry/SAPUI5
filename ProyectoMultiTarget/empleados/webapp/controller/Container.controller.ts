@@ -1,15 +1,14 @@
-import BaseControl from "sap/viz/ui5/controls/common/BaseControl";
+import BaseController from "./BaseController";
 
 /**
- * @namespace master.logaligroup.empleados.controller 
+ * @namespace master.logaligroup.empleados.view.controller
  */
 
-export default class Container extends BaseControl{
+export default class Container extends BaseController {
 
-    public onInit() : void | undefined{
+
+    public onInit () : void | undefined {
 
     }
 
-
-    
 }
